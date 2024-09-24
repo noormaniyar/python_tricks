@@ -6,14 +6,11 @@
 # pip install newspaper3k
 # Below we access the title of the article. All we need is the article URL.
 
-# from newspaper import Article
+from newspaper import Article
 
-# news = Article("https://indianexpress.com/article/"
-# "technology/gadgets/"
-# "apple-di sconti nues-i ts-1ast-i pod-model-7910720/")
-# news.download()
-# news.parsed
-# print(news.title)
-
-
-# not working ; to be checked and solved.
+url = 'https://www.ndtv.com/india-news/haryana-assembly-polls-savitri-jindal-is-indias-richest-woman-savitri-jindal-bjps-b-team-in-haryana-what-she-told-ndtv-6640699#pfrom=home-ndtv_topstories_lastestImg'
+news = Article(url)
+news.download()
+news.parse()
+print(news.text)
+print(news.title)
